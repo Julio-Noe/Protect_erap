@@ -76,28 +76,30 @@ def get_info(url_main):
         for i in (html1.find_all("p", {'class':'zfr3Q CDt4Ke'})): #label 'p' is for text, so, search all text in the web
             data=[]
             texto=i.get_text()
-            if('Technology: ' in texto):
-                start=texto.find('Technology: ')
-                gettech=texto[start+11:]
-                search_end=gettech.find('Issue:')
-                tech=gettech[:search_end]
-            if('Purpose:' in texto):
-                start=texto.find('Purpose:')
-                getpurpose=texto[start+9:]
-                search_end=getpurpose.find('Technology:')
-                purpose=getpurpose[:search_end]
-            if('Issue:' in texto):
-                start=texto.find('Issue:')
-                if(start>100):
-                    getissue=texto[start+7:]
-                    search_end=getissue.find('Transparency')
-                    issue=getissue[:search_end]
-                    
-                    if(issue not in list_issuesAIAAIC):
-                        list_issuesAIAAIC.append(issue)
-                
-            else:
+            if('USA' in texto or 'UK' in texto):
                 pass
+            else:
+                if('Technology: ' in texto):
+                    start=texto.find('Technology: ')
+                    gettech=texto[start+11:]
+                    search_end=gettech.find('Issue:')
+                    tech=gettech[:search_end]
+                if('Purpose:' in texto):
+                    start=texto.find('Purpose:')
+                    getpurpose=texto[start+9:]
+                    search_end=getpurpose.find('Technology:')
+                    purpose=getpurpose[:search_end]
+                if('Issue:' in texto):
+                    start=texto.find('Issue:')
+                    if(start>100):
+                        getissue=texto[start+7:]
+                        search_end=getissue.find('Transparency')
+                        issue=getissue[:search_end]
+                        
+                        if(issue not in list_issuesAIAAIC):
+                            list_issuesAIAAIC.append(issue)
+                
+           
         #print(issue,'---------')
         #print('TITLE----------', title)
         return(title, issue, tech, purpose)
