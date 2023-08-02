@@ -7,10 +7,12 @@ import json
 from spacy.training.example import Example
 from spacy.util import minibatch, compounding
 from pathlib import Path
+from spacy.language import Language
+from langdetect import detect
 #nlp = spacy.load("en_core_web_lg")
 # Getting the pipeline component
 #ner=nlp.get_pipe("ner")
-
+'''
 def read_taxonomies2(tax):
     list_tax=list()
     df1 = pd.read_csv('skos_uri.csv')
@@ -55,63 +57,107 @@ def get_corpus_bert1(doc):
                     text.append([s, token.orth_, token.pos_, i[6], clean])
    
     return (text)
+    '''
 
-def ner1(doc): #funcion para obtener tabla con [idnumerodoc_numerosentencia, sentencia]
+def create_table_id_text(doc): #funcion para obtener tabla con [idnumerodoc_numerosentencia, sentencia]
     nlp = spacy.load("en_core_web_lg")
     table1=list()
+    test=str()
     with open(doc, 'r') as file: #csv donde vienen los datos
         csvreader = csv.reader(file)
         for i in csvreader:
             clean = re.sub(r'[^\w\s]+','',i[7])
+            clean=clean.replace('\n', '')
+            test+=clean
             document = nlp(clean)
-            #print("-------------Sentences: ", i[0])
-            for j,s in enumerate(document.sents):
-                ide='id'+str(i[0])+str(j)
-                #print(ide, s)
-                table1.append([ide, s])
-    return table1
+            table1.append([i[0], clean])
+    #for i in table1:
+    #    print(i)
+    f = open("alldocuments.txt", "a")
+    f.write(clean)
+    f.close()
+    return table1, test
     
                     
-def read_my_vocabulary(tax): #funcion para leer la propia taxonomia (vocabulario)
+def read_my_vocabulary(tax, column): #funcion para leer la propia taxonomia (vocabulario)
     vocab=list()
     with open(tax, 'r') as file: #csv donde vienen la lista del vocabulario (issues)
         csvreader = csv.reader(file)
         for i in csvreader:
             #print(i[8]) # columna de issues
-            vocab.append(i[8])
-    #print(vocab)
-    return vocab  
+            vocab.append(i[column-1].lower())
+            
+    
+    print(vocab[7:])
+    return vocab[7:]  
 
+def search_term_in_document(doc, vocab): #funcion para buscar termino de la taxonomia en la sentencia
+    table2=list()
+    train_data=list()
+    with open(doc, 'r') as file: #csv donde vienen los datos
+        csvreader = csv.reader(file)
+        for i in csvreader:
+            doc_clean = re.sub(r'[^\w\s]+','',i[7])
+            for j in vocab:
+                if(j.lower() == doc_clean.strip().lower()):
+                    #print(j.lower())     
+                    start=doc_clean.strip().lower().find(j.lower())
+                    end=start+len(j)
+                    if(start != 0):
+                        #table2.append([i[0],doc.text.strip().lower(),j.lower(), start, end])
+                        #train_data.append([(doc.text.strip().lower(),{'entities':[(start, end, j.lower())]})])
+                        tupla={'entities':[[start, end, 'issue']]}
+                        
+                        train_data.append([doc_clean.strip().lower(), tupla])      
+    print(train_data)
+    train_data2={"annotations": train_data}   
+    print(len(table2),len(train_data2))
+    with open('annotation_by_document.json', 'w') as f:
+        json.dump(train_data2, f)
+    #print(train_data)
+    return train_data2
 
 def search_term_in_sent(table1, vocab): #funcion para buscar termino de la taxonomia en la sentencia
     table2=list()
-    train_data=list()
+    train_data=dict()
+    sents=list()
+    tupla=list()
+    
     for i in table1:
-        sent=i[1]
+        sent=i[1].strip().lower()
+        #print(sent, type(sent))
+        separete_sent=sent.split(' ')
+        entities=list()
         for j in vocab:
-            if(j.lower() in sent.text.strip().lower()):
-                #print(j.lower())     
-                start=sent.text.strip().lower().find(j.lower())
-                end=start+len(j)
-                #print(start, end)
-                if(start != 0):
-                    table2.append([i[0],sent.text.strip().lower(),j.lower(), start, end])
-                    #train_data.append([(sent.text.strip().lower(),{'entities':[(start, end, j.lower())]})])
-                    tupla={'entities':[[start, end, 'issue']]}
-                    train_data.append([sent.text.strip().lower(), tupla])      
-    print(len(table2),len(train_data))
-    with open('issues.json', 'w') as f:
+            #print('----',sent.find(j), j)
+            if(sent.find(j) != -1):
+                found=sent.find(j)
+                finish_found=found+len(j)
+                j_low=j.lower()
+                print('encontrado',found, finish_found, '-->',j_low)
+                entities_dict=dict()
+                entities_dict['entities']=entities
+                #sents.append([sent.strip().lower(), entities_dict])    
+                #start=sent.strip().lower().find(j.lower())
+                #end=start+len(j)  
+                if(found > 0):
+                    print('here')
+                    entities.append([found, finish_found, 'issue'])
+        if(len(entities)>0):
+            tupla.append([sent.strip().lower(), entities_dict])
+ 
+        
+    train_data["annotations"]= tupla
+    print(train_data)
+    with open('anotation_by_link.json', 'w') as f:
         json.dump(train_data, f)
-    #print(train_data)
-    return train_data
+    
+    return #train_data2
 
 
 def search_term_in_text(corpus, vocab): #funcion para buscar termino de la taxonomia en todo el texto
     table2=list()
     train_data=dict()
-    #train_data={"annotations", table2 }
-    #print(train_data)
-    
     for j in vocab:
         if(j.lower() in corpus.strip().lower()):
             #print(j.lower())     
@@ -158,25 +204,27 @@ def training(train_data, test):
         print("Losses", losses)
 
 #parte buena
-table=ner1('corpus_aiact.csv')
-vocab=read_my_vocabulary('vocab.csv')
-#train_data=search_term_in_sent(table, vocab)
+table=create_table_id_text('corpus_by_link_test.csv') #se forma una tabla [ide, sentence]
+vocab=read_my_vocabulary('vocab.csv', 9)#se forma una columna solo del vocabulario.
 
-
-
+#table=[['1', 'hola como estas'],['2', ' 1 hola como estas gdf'],['11', ' 2 hola como estas tfe'],['12', '3 hola como estas fjwe' ],['13', '4 hola como estas ew'],['15', '5 hola como estas ewr'],['18', '6 hola como estas'],['19', '7 hola como estas erwer']]
+#vocab=['hola', 'estas', 'tfe']
+train_data=search_term_in_sent(table[0], vocab) #corpus json por oraciones
+#search_term_in_document('corpus_final.csv', vocab)
 #test='But what if those who work together in teams now also merge the citizen’s data to form profiles – is that a breach of privacy, or rather the extension of a cooperative approach?'
-
-test=str()
+'''
+test=str()#test es todo el texto plano del corpus
 with open('corpus_final.csv', 'r') as file: #csv donde vienen los datos
-        csvreader = csv.reader(file)
-        for i in csvreader:
-            clean=re.sub(r'[^\w\s]+','',i[7])
-            clean.replace('\n','')
-            if(clean[:-1]=='\n'):
-                test+=clean[:-1]
-            else:
-                test+=clean
-#print(test)
-train_data=search_term_in_text(test, vocab)       
-training(train_data, test)
+    csvreader = csv.reader(file)
+    print(csvreader)
+    n=0
+    for i in csvreader:
+        clean=re.sub(r'[^\w\s]+','',i[7])
+        clean.replace('\n','')
+        test+=clean
+        print(clean)
+        n=n+1
+#print(test)'''
+#train_data=search_term_in_text(table[1], vocab)   #funcion para buscar termino de la taxonomia en todo el texto    
+#training(train_data, test) #entrenamiento
 
