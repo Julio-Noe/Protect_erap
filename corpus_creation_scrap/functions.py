@@ -67,6 +67,7 @@ def get_info(url_main):
         title=str()
         tech=str()
         purpose=str()
+        country=str()
         if(html1.find('h1')!=None):
             title=html1.find('h1').text
         elif(html1.find('strong') !=None):
@@ -76,33 +77,62 @@ def get_info(url_main):
         for i in (html1.find_all("p", {'class':'zfr3Q CDt4Ke'})): #label 'p' is for text, so, search all text in the web
             data=[]
             texto=i.get_text()
-            if('USA' in texto or 'UK' in texto):
-                pass
-            else:
-                if('Technology: ' in texto):
-                    start=texto.find('Technology: ')
-                    gettech=texto[start+11:]
-                    search_end=gettech.find('Issue:')
-                    tech=gettech[:search_end]
-                if('Purpose:' in texto):
-                    start=texto.find('Purpose:')
-                    getpurpose=texto[start+9:]
-                    search_end=getpurpose.find('Technology:')
-                    purpose=getpurpose[:search_end]
-                if('Issue:' in texto):
-                    start=texto.find('Issue:')
-                    if(start>100):
-                        getissue=texto[start+7:]
-                        search_end=getissue.find('Transparency')
-                        issue=getissue[:search_end]
+            
+            
+            #print('textoooooo',texto)
+            if('Country: ' in texto):
+                if('Country: USA' in texto):
+                    #print('1-----',texto)
+                    start=texto.find('Country: ')
+                    getcountry=texto[start+8:]
+                    search_end=getcountry.find('Sector:')
+                    country=texto[start+8:start+12]
+                    print('-----------',country)
+                elif('Country: UK' in texto):
+                    #print('2-----',texto)
+                    start=texto.find('Country: ')
+                    getcountry=texto[start+8:]
+                    search_end=getcountry.find('Sector:')
+                    country=texto[start+8:start+11]
+                    print('-----------',country)
+               
+                    
+            elif('Technology: ' in texto):
+                start1=texto.find('Technology: ')
+                gettech=texto[start1+11:]
+                search_end=gettech.find('Issue:')
+                tech=gettech[:search_end]
+                print('Technology: ',start1,tech)
+                if('Issue' in texto):
+                    start3=texto.find('Issue:')
+                    getissue=texto[start3+7:]
+                    search_end=getissue.find('Transparency')
+                    issue=getissue[:search_end]
+                    print('Issue:',start3,getissue)
+
+            elif('Purpose:' in texto):
+                start2=texto.find('Purpose:')
+                getpurpose=texto[start2+9:]
+                search_end=getpurpose.find('Technology:')
+                purpose=getpurpose[:search_end]
+                print('Purpose:',start2,getpurpose)
+            elif('Issue' in texto):
+                print('nooooooooooooooo')
+                start3=texto.find('Issue:')
+                getissue=texto[start3+7:]
+                search_end=getissue.find('Transparency')
+                issue=getissue[:search_end]
+                print('Issue:',start3,getissue)
                         
-                        if(issue not in list_issuesAIAAIC):
-                            list_issuesAIAAIC.append(issue)
+                if(issue not in list_issuesAIAAIC):
+                    list_issuesAIAAIC.append(issue)
+           
+                
                 
            
         #print(issue,'---------')
         #print('TITLE----------', title)
-        return(title, issue, tech, purpose)
+        return(title, issue, tech, purpose, country)
 
 def corpus(url, repo,  issue, titulo, n_, l_issues):
     n_doc=1
@@ -118,7 +148,7 @@ def corpus(url, repo,  issue, titulo, n_, l_issues):
             isu=isu2[0]
     
     if(url):
-        print('---->',url)
+        #print('---->',url)
         try:
             #list_no=['https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677377', 'https://www.nasdaq.com/articles/six-children-and-one-adult-injured-in-tesla-crash-2021-08-17', 'https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/9675440', 'https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/9677611', 'https://www.dataguidance.com/news/italy-garante-fines-foodinho-%E2%82%AC26m-unlawful-employee', 'https://www.stuff.co.nz/business/108106220/humans-still-have-final-say-on-almost-all-nz-government-decisions', 'https://www.itv.com/news/meridian/2021-08-16/car-collides-with-pedestrians-in-sussex','https://www.hulldailymail.co.uk/news/celebs-tv/loose-women-share-feelings-hull-4918390','https://www.stuff.co.nz/national/politics/300420063/secretive-facial-recognition-trial-at-wellington-airport-went-against-privacy-commissioners-advice','https://www.stuff.co.nz/technology/digital-living/126691808/privacy-watch-how-to-keep-big-brother-at-bay','https://www.timesofisrael.com/idf-building-facial-recognition-database-of-palestinians-in-hebron-report/','https://www.seattletimes.com/business/rent-going-up-one-companys-algorithm-could-be-why/','https://www.stuff.co.nz/motoring/300572609/video-captures-driverless-tesla-crashing-into-us3-million-private-jet','https://www.coupang.com','https://www.seattletimes.com/business/technology/facial-recognition-lawsuits-against-amazon-and-microsoft-can-proceed-judge-rules/','https://www.stuff.co.nz/entertainment/games/127789184/bbc-investigation-finds-virtual-sex-parties-happening-in-childrens-computer-game-roblox','https://www.kompas.tv/article/272949/newsguard-algoritma-tiktok-suapi-pengguna-dengan-konten-disinformasi-soal-konflik-rusia-ukraina','https://www.miamiherald.com/news/politics-government/state-politics/article256293082.html','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=rJEK5gDQqtBwJzQw1z8y2g==&system=prod','https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=rJEK5gDQqtBwJzQw1z8y2g==&system=prod']
             list_no=['https://www.sacbee.com/news/nation-world/national/article252604333.html','https://amp.miamiherald.com/news/local/community/florida-keys/article230945733.html','https://www.flkeysnews.com/news/local/article230945733.html']
