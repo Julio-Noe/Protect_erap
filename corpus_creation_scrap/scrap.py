@@ -1,82 +1,128 @@
 
 from bs4 import BeautifulSoup
-import urllib.request
-import urllib.parse
 from urllib.error import HTTPError
 from jinja2 import is_undefined
-import requests
-import spacy
-import nltk
+from nltk import tokenize
 from nltk.tokenize import word_tokenize
 from gensim.models import KeyedVectors
 from gensim.models import Word2Vec
-import json
 from urllib.request import urlopen
-import re
-import os
 import csv
-import functions #aqui estan las funciones
-#import word2vect_code
+import os
+import string
+import functions #local functions
 
-fc=open('corpus_protect/en2/in_corpus.txt', 'a')
-iss=open('corpus_protect/en2/issues_AIAAIC.txt', 'w')
-gold=open('corpus_protect/en2/paragraph_issue.txt', 'a')
-url_repo= "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents" #access to main web of database AI
-no=['https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/são-geraldo-magela-drone-delivery','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/buenos-aires-sistema-de-reconocimiento-facial-de-prófugos','Engineer.ai misleading marketing','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery', 'https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/dall-e-image-generation-bias-stereotyping','https://www.aiaaic.org//aiaaic-repository','https://www.stuff.co.nz/motoring/300572609/video-captures-driverless-tesla-crashing-into-us3-million-private-jet','ValueError: unknown url type:','MoviePass 2.0 PreShow eye tracking','Pony.ai driverless test crash','Gdansk Primary School No. 2 meal payment verification', 'https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/berlin-südkreuz-rail-station-algorithmic-surveillance','https://www.aiaaic.orghttps://drive.google.com/open?id=1GkLO9BhqOp-JCm3pXpSJyyhJWty4P4XCwO4N4LjZ-jI','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery']
+#Paths definition
+working_dir = os.getcwd() + '/corpus_creation_scrap'
+print(working_dir)
+in_corpus_path = working_dir + '/corpus_protect/en3/in_corpus.txt'
+issues_aiaaic_path = working_dir + '/corpus_protect/en3/issues_AIAAIC.txt'
+paragraph_issue_path = working_dir + '/corpus_protect/en3/paragraph_issue.txt'
+corpus_path = working_dir + '/corpus_protect/en3/corpus_final.csv'
+#Files manipulation
+fc=open(in_corpus_path,'a')
+iss=open(issues_aiaaic_path, 'w')
+paragraph_issue_file=open(paragraph_issue_path, 'a')
+corpus_file=open(corpus_path, 'w', newline='')
 
+writer_corpus_csv = csv.writer(corpus_file)
+writer_corpus_csv.writerow(['ID','AIAAIC Link','Related link', 'AIAAIC Article Title', 'Technology', 'Purpose', 'Issues', 'Country','Text'])
 
+# URL of the AIAAIC (AI, algorithmic, and automation incidents) list of articles 
+url_repo= "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents" 
 
-list_repo=functions.repository_list(url_repo)
+# List of problematic URLS - contain not UTF-8 characters
+black_list=['https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/são-geraldo-magela-drone-delivery','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/buenos-aires-sistema-de-reconocimiento-facial-de-prófugos','Engineer.ai misleading marketing','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery', 'https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/dall-e-image-generation-bias-stereotyping','https://www.aiaaic.org//aiaaic-repository','https://www.stuff.co.nz/motoring/300572609/video-captures-driverless-tesla-crashing-into-us3-million-private-jet','ValueError: unknown url type:','MoviePass 2.0 PreShow eye tracking','Pony.ai driverless test crash','Gdansk Primary School No. 2 meal payment verification', 'https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/berlin-südkreuz-rail-station-algorithmic-surveillance','https://www.aiaaic.orghttps://drive.google.com/open?id=1GkLO9BhqOp-JCm3pXpSJyyhJWty4P4XCwO4N4LjZ-jI','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery']
+
+# get the list of articles from the AIAAIC dataset
+list_repo=functions.get_repository_list(url_repo)
+
 matrix_repo=list()
+
 for i in list_repo:
     matrix_repo.append([i, []])
 
-file=open('corpus_protect/en2/corpus_final.csv', 'w', newline='')
-writer_csv = csv.writer(file)
-writer_csv.writerow(['NAME_DOC','REPO_LEVEL(2)','LIST_LINKS', 'TITLE', 'TECHNOLOGY', 'PURPOSE', 'ISSUES', 'COUNTRY','TEXT'])
-texto_documents=list()
-n_url=1 
+documents_text=list()
 list_paragraph=list()
+all_files = len(matrix_repo)
+url_counter=1 
+counter = 0
 for url_m in matrix_repo:
-    ur=url_m[0].encode('utf-8')#url repo nivel 2
-    url=ur.decode('utf-8')
-    fr = open('corpus_protect/en2/in_corpus.txt','r')#aqui se guardan cada una de la informacion
-    filer=fr.readlines()
-    if(url+'\n' in filer):
+    print("=============",counter,"-",all_files,"============")
+    counter = counter + 1
+    """"   
+    if counter > 25:
+        break
+    """
+    raw_url=url_m[0].encode('utf-8')#url repo nivel 2
+    url=raw_url.decode('utf-8')
+    
+    # Save URLs processed (avoid start again the process)
+    in_corpus_read = open(in_corpus_path,'r')
+    
+    in_corpus_lines=in_corpus_read.readlines()
+    if(url+'\n' in in_corpus_lines):
         pass
     else:
-        if((url not in no) ):
+        if((url not in black_list) ):
             fc.write(url+'\n')
             #print('-->',url)
-            info=functions.get_info(url) #se obtiene la informacion de la caja de metadatos.
-            title=info[0]
-            issue=info[1]
-            tech=info[2]
-            purpose=info[3]
-            country=info[4]
+            # Get metadata (box)
+            article_metadata=functions.get_metadata(url) 
+            title = article_metadata[0]
+            issue = article_metadata[1]
+            technology = article_metadata[2]
+            purpose = article_metadata[3]
+            country = article_metadata[4]
+            content_list = article_metadata[5]
             l_issues=functions.separate_issues(issue)
-            l_issues_join='; '.join(l_issues[1])
-            list_repo2=functions.repository_issues(url) #Links list of News, commentary, analysis
-           
+            
+            if len(l_issues[1]) > 1:
+                l_issues_join='; '.join(l_issues[1])
+            else:
+                l_issues_join = ''.join(l_issues[1])
+                print(l_issues_join)
+            url_links_list=functions.repository_issues(url) #Links list of News, commentary, analysis
+            
+            if len(content_list) > 0:
+                for content in content_list:
+                    text_al = functions.strip_nonalnum_re(content)
+                    for j in tokenize.sent_tokenize(text_al):
+                        printable_text = ''.join([str(char) for char in j if char in string.printable])
+                        writer_corpus_csv.writerow([ str(url_counter)+'_0', url, url, title, technology.replace(';','|'), purpose, l_issues_join, country, printable_text.strip()])
         
-            gold.write('Nuevo documento|'+url+'\n')
-            n_=1
-            n=1
-            for url2 in list_repo2:
-                url_m[1].append(url2)
+            paragraph_issue_file.write('Nuevo documento|'+url+'\n')
+            print_counter = 1
+            links_counter=1
+            total_links = len(url_links_list)
+            for url_link in url_links_list:
+                print('Processing link: ', print_counter," of ", total_links)
+                print_counter += 1
+
+                url_m[1].append(url_link)
                 listlinks='; '.join(url_m[1])
-                texto=functions.corpus(url2, url,  issue, title, n_, l_issues_join)
-                texto_documents.append(texto)
-                file1=open('corpus_protect/en2/corpus'+str(n_url)+'_'+str(n)+'.txt', 'a')
-                file1.write('URL_repo: '+url+'\n')
-                file1.write('URL_FILE: '+url2+'\n')
-                file1.write('TITULO: '+title+'\n')
-                file1.write('TECHNOLOGY: '+tech+'\n')
-                file1.write('PURPOSE: '+purpose+'\n')
-                file1.write('ISSUE: '+l_issues_join+'\n')
-                file1.write('------'+'\n')
-                join_texto=''.join(texto)
-                file1.write(join_texto)
-                writer_csv.writerow([ str(n_url)+'_'+str(n), url, url2, title, tech.replace(';','|'), purpose, l_issues_join, country, texto.replace('\n','')])#se escribe en formato csv
-    n_url=n_url+1
+                text_list=functions.get_text_link(url_link, issue)
+                if text_list != "" or len(text_list) > 0:
+                    documents_text.append(' '.join(text_list))
+                    partial_result_file=open(working_dir+'/corpus_protect/en3/corpus'+str(url_counter)+'_'+str(links_counter)+'.txt', 'a')
+                    partial_result_file.write('AIAAIC link: '+url+'\n')
+                    partial_result_file.write('Related link: '+url_link+'\n')
+                    partial_result_file.write('Title: '+title+'\n')
+                    partial_result_file.write('Technology: '+technology+'\n')
+                    partial_result_file.write('Purpose: '+purpose+'\n')
+                    partial_result_file.write('Issue: '+l_issues_join+'\n')
+                    partial_result_file.write('------'+'\n')
+                    url_link_text=''.join(' '.join(text_list))
+                    partial_result_file.write(url_link_text)
+                    write_file = False
+                    for text in text_list:
+                        text_al = functions.strip_nonalnum_re(text)
+                        if len(text_al) > 100:
+                            for j in tokenize.sent_tokenize(text_al):
+                                printable_text = ''.join([str(char) for char in j if char in string.printable])
+                                writer_corpus_csv.writerow([ str(url_counter)+'_'+str(links_counter), url, url_link, title, technology.replace(';','|'), purpose, l_issues_join, country, printable_text.strip()])#se escribe en formato csv
+                                write_file = True
+                if write_file:
+                    links_counter += 1 
+            url_counter=url_counter+1
 

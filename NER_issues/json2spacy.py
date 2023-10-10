@@ -21,10 +21,11 @@ def convert(TRAIN_DATA):
         doc.ents = ents # label the text with the ents
         db.add(doc)
 
-    db.to_disk("./train.spacy") # save the docbin object
+    db.to_disk("./new_train.spacy") # save the docbin object
 
-
-f = open('issues_all_text.json') #documento corpus en json
+#ai_act_training_data
+#f = open('anotation_by_link.json') #documento corpus en json
+f = open('ai_act_training_data.json') #documento corpus en json
 data = json.load(f)
 
 TRAIN_DATA=data['annotations']

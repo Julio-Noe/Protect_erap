@@ -15,9 +15,10 @@ from urllib.request import urlopen
 import re
 import os
 import csv
+import os.path
 list_issuesAIAAIC=list()  
-isuue_list=list()
-def repository_list(url_main):
+issue_list=list()
+def get_repository_list(url_main):
     list_urls=list()
     lines_f=list()
     response1 =urllib.request.urlopen(url_main)
@@ -50,131 +51,105 @@ def repository_issues(url_main):
     response1 =urllib.request.urlopen(url_main)
     html1=BeautifulSoup(response1, 'html.parser')
     bloque=html1.find_all('ul',{'class':"n8H08c UVNKR"})
-    for ul in bloque[-2]:
-        bloque_ul=ul.find_all('a', class_='XqQF9c') #search all links where are the documents refers to issue
+    #Negative numbers mean that you count from the right instead of the left. So, list[-1] refers to the last element, list[-2] is the second-last, and so on.
+    #print(bloque[-2])
+    #for ul in bloque[-2]:
+    for ul in bloque:
+        bloque_ul=ul.find_all('a', class_='XqQF9c', href=True) #search all links where are the documents refers to issue
         
-
-        for j in bloque_ul:
-            list_urls.append(j.text)
-     
+        for a in bloque_ul:
+            href = a['href']
+            if 'http' in href and 'pdf' not in href:
+                list_urls.append(a['href'])
     return list_urls
 
-def get_info(url_main):
-    if url_main:
-        response1 =urllib.request.urlopen(url_main)
-        html1=BeautifulSoup(response1)
+def get_metadata(url):
+    if url:
+        print(url)
+        response1 =urllib.request.urlopen(url)
+        html1=BeautifulSoup(response1, 'html.parser')
         issue=str()
         title=str()
-        tech=str()
+        content = str()
+        technology=str()
         purpose=str()
         country=str()
-        if(html1.find('h1')!=None):
-            title=html1.find('h1').text
-        elif(html1.find('strong') !=None):
-            title=html1.find('strong').text
-        p=html1.find_all("p", {'class':'zfr3Q CDt4Ke'})
-        #print('XXXXXXXX',p[0], len(p))
-        for i in (html1.find_all("p", {'class':'zfr3Q CDt4Ke'})): #label 'p' is for text, so, search all text in the web
-            data=[]
-            texto=i.get_text()
-            
-            
-            #print('textoooooo',texto)
-            if('Country: ' in texto):
-                if('Country: USA' in texto):
-                    #print('1-----',texto)
-                    start=texto.find('Country: ')
-                    getcountry=texto[start+8:]
-                    search_end=getcountry.find('Sector:')
-                    country=texto[start+8:start+12]
-                    print('-----------',country)
-                elif('Country: UK' in texto):
-                    #print('2-----',texto)
-                    start=texto.find('Country: ')
-                    getcountry=texto[start+8:]
-                    search_end=getcountry.find('Sector:')
-                    country=texto[start+8:start+11]
-                    print('-----------',country)
-               
-                    
-            elif('Technology: ' in texto):
-                start1=texto.find('Technology: ')
-                gettech=texto[start1+11:]
-                search_end=gettech.find('Issue:')
-                tech=gettech[:search_end]
-                print('Technology: ',start1,tech)
-                if('Issue' in texto):
-                    start3=texto.find('Issue:')
-                    getissue=texto[start3+7:]
-                    search_end=getissue.find('Transparency')
-                    issue=getissue[:search_end]
-                    print('Issue:',start3,getissue)
-
-            elif('Purpose:' in texto):
-                start2=texto.find('Purpose:')
-                getpurpose=texto[start2+9:]
-                search_end=getpurpose.find('Technology:')
-                purpose=getpurpose[:search_end]
-                print('Purpose:',start2,getpurpose)
-            elif('Issue' in texto):
-                print('nooooooooooooooo')
-                start3=texto.find('Issue:')
-                getissue=texto[start3+7:]
-                search_end=getissue.find('Transparency')
-                issue=getissue[:search_end]
-                print('Issue:',start3,getissue)
-                        
+        content_list=list()
+        content_counter = 0
+        #Get title and content
+        for article in html1.find_all('div',{'class':'JNdkSc-SmKAyb LkDMRd'}):
+            #0 = title
+            if content_counter == 0:
+                title = article.text
+                print("Title: ", title)
+            elif content_counter == 4:
+                paragraph_list = article.find_all('p')
+                for paragraph in paragraph_list:
+                    content_list.append(paragraph.text.strip())
+                #content = article.text
+                print("Content: ", content_list)
+                #break
+            elif content_counter == 5:
+                article_text= article.text
+                begin_index = article_text.find('Country:')
+                end_index = article_text.find('Sector:')
+                country = article_text[begin_index+8:end_index].strip()
+                print("Country: ",country)
+                begin_index = article_text.find('Purpose:')
+                end_index = article_text.find('Technology:')
+                purpose = article_text[begin_index+9:end_index].strip()
+                print("Purpose: ", purpose)
+                begin_index = end_index
+                end_index = article_text.find('Issue:')
+                technology = article_text[begin_index+11:end_index].strip()
+                print("Technology: ",technology)
+                begin_index = end_index
+                end_index = article_text.find('Transparency:')
+                issue = article_text[begin_index+7:end_index].strip()
+                print("Issue: ",issue)
                 if(issue not in list_issuesAIAAIC):
                     list_issuesAIAAIC.append(issue)
-           
-                
-                
-           
-        #print(issue,'---------')
-        #print('TITLE----------', title)
-        return(title, issue, tech, purpose, country)
+            if content_counter > 5:
+                break
+            content_counter += 1       
+        return(title, issue, technology, purpose, country, content_list)
 
-def corpus(url, repo,  issue, titulo, n_, l_issues):
-    n_doc=1
-    nlp = spacy.load('en_core_web_md')
-    iss=nlp(issue)
-    listissue=issue.split(';')
-    texto2=list()
-    list_text=list()
-    in_corpus=list()
-    for isu in listissue:
-        if('/' in isu):
-            isu2=isu.split('/')
-            isu=isu2[0]
+def get_text_link(url, issue):
+    document_counter=1
+    issue_list = issue.split(';')
+    text_list=list()
+    
+    
+    for issue in issue_list:
+        if('/' in issue):
+            issue_splited=issue.split('/')
+            issue=issue_splited[0]
     
     if(url):
         #print('---->',url)
         try:
-            #list_no=['https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677377', 'https://www.nasdaq.com/articles/six-children-and-one-adult-injured-in-tesla-crash-2021-08-17', 'https://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/9675440', 'https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/9677611', 'https://www.dataguidance.com/news/italy-garante-fines-foodinho-%E2%82%AC26m-unlawful-employee', 'https://www.stuff.co.nz/business/108106220/humans-still-have-final-say-on-almost-all-nz-government-decisions', 'https://www.itv.com/news/meridian/2021-08-16/car-collides-with-pedestrians-in-sussex','https://www.hulldailymail.co.uk/news/celebs-tv/loose-women-share-feelings-hull-4918390','https://www.stuff.co.nz/national/politics/300420063/secretive-facial-recognition-trial-at-wellington-airport-went-against-privacy-commissioners-advice','https://www.stuff.co.nz/technology/digital-living/126691808/privacy-watch-how-to-keep-big-brother-at-bay','https://www.timesofisrael.com/idf-building-facial-recognition-database-of-palestinians-in-hebron-report/','https://www.seattletimes.com/business/rent-going-up-one-companys-algorithm-could-be-why/','https://www.stuff.co.nz/motoring/300572609/video-captures-driverless-tesla-crashing-into-us3-million-private-jet','https://www.coupang.com','https://www.seattletimes.com/business/technology/facial-recognition-lawsuits-against-amazon-and-microsoft-can-proceed-judge-rules/','https://www.stuff.co.nz/entertainment/games/127789184/bbc-investigation-finds-virtual-sex-parties-happening-in-childrens-computer-game-roblox','https://www.kompas.tv/article/272949/newsguard-algoritma-tiktok-suapi-pengguna-dengan-konten-disinformasi-soal-konflik-rusia-ukraina','https://www.miamiherald.com/news/politics-government/state-politics/article256293082.html','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://www.tiktok.com/@miabellaceo/video/7032987655449218309','https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=rJEK5gDQqtBwJzQw1z8y2g==&system=prod','https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=rJEK5gDQqtBwJzQw1z8y2g==&system=prod']
-            list_no=['https://www.sacbee.com/news/nation-world/national/article252604333.html','https://amp.miamiherald.com/news/local/community/florida-keys/article230945733.html','https://www.flkeysnews.com/news/local/article230945733.html']
-            if((url in list_no) ):
-                print('sin nada')
+            blacklist=['https://www.sacbee.com/news/nation-world/national/article252604333.html','https://amp.miamiherald.com/news/local/community/florida-keys/article230945733.html','https://www.flkeysnews.com/news/local/article230945733.html']
+            if((url in blacklist) ):
+                print('nothing to do in: ', url)
             elif('.pdf' in url[-4:]):
-                print('sin nada')
+                print('nothing to do; it is a pdf file')
             
             else:
-                if(url not in list_no):
+                if(url not in blacklist):
                     #print('entra try')
-                    response= requests.get(url, timeout = 2)
+                    print("link: ", url)
+                    response= requests.get(url, timeout = 5)
                     #print(response)
                     html=BeautifulSoup(response.text, 'html.parser')
-                    results=html.find_all('p')
+                    results=html.find_all('p', text=True)
                     #print(results)
-                    records = []
                     response.raise_for_status()
 
                     for result in results:
                         name = result.get_text()
-                        t=''.join(name)
-                        texto2.append(t+'\n')
-
-                
-                    n_doc=n_doc+1
+                        raw_text=''.join(name)
+                        text_list.append(raw_text+'\n')               
+                    document_counter=document_counter+1
         except HTTPError as e:
             # Need to check its an 404, 503, 500, 403 etc.
             status_code = e.response.status_code
@@ -202,8 +177,8 @@ def corpus(url, repo,  issue, titulo, n_, l_issues):
             for result in results:
                 name = result.get_text()
                 #print(name)
-                t=''.join(name)
-                texto2.append(t.strip())
+                raw_text=''.join(name)
+                text_list.append(raw_text.strip())
                 #file1.write(t+'\n')
             pass
         except ValueError as e:
@@ -212,10 +187,7 @@ def corpus(url, repo,  issue, titulo, n_, l_issues):
             pass
         except:
             pass
-        
-        #file1.close()
-    texto_str=' '.join(texto2)
-    return(texto_str)
+    return text_list
 
 def separate_issues(issue_bad):
     #s = re.sub(r'[; ]', '', issue_bad)
@@ -230,7 +202,7 @@ def separate_issues(issue_bad):
                 for iss in issue_l2:
                     #print( iss)
                     issues.append(iss.strip())
-                    isuue_list.append(iss.strip())     
+                    issue_list.append(iss.strip())     
             
 
             elif('-' in i):
@@ -239,9 +211,16 @@ def separate_issues(issue_bad):
                 for iss in issue_l2:
                     #print( iss)
                     issues.append(iss.strip())
-                    isuue_list.append(iss.strip())
+                    issue_list.append(iss.strip())
             else:
                 issues.append(i.strip())
-                isuue_list.append(i.strip())
+                issue_list.append(i.strip())
+    elif len(issue_bad) > 0:
+        issues.append(issue_bad.strip())
+        issue_list.append(issue_bad.strip())
+    print(issues)
+    return issue_list, issues
+    #return '; '.join(str(x) for x in issues)
 
-    return isuue_list, issues
+def strip_nonalnum_re(word):
+    return re.sub(r"^\W+|\W+$", "", word)
