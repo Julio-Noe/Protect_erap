@@ -18,6 +18,17 @@ import csv
 import os.path
 list_issuesAIAAIC=list()  
 issue_list=list()
+
+def temporal_list_articles(working_dir):
+    #temporal_path = working_dir + "/corpus_protect/en3/DATABAS.txt"
+    temporal_path = working_dir + "/corpus_protect/en3/BLANK.txt"
+    list_urls = list()
+    temporal_file = open(temporal_path, 'r')
+    list_urls = temporal_file.readlines()
+    return list_urls
+
+
+
 def get_repository_list(url_main):
     list_urls=list()
     lines_f=list()
@@ -82,14 +93,15 @@ def get_metadata(url):
             if content_counter == 0:
                 title = article.text
                 print("Title: ", title)
-            elif content_counter == 4:
+            elif content_counter == 3:
                 paragraph_list = article.find_all('p')
                 for paragraph in paragraph_list:
                     content_list.append(paragraph.text.strip())
                 #content = article.text
                 print("Content: ", content_list)
                 #break
-            elif content_counter == 5:
+            elif content_counter == 4:
+            #elif article.text.find('Country: ') != -1:
                 article_text= article.text
                 begin_index = article_text.find('Country:')
                 end_index = article_text.find('Sector:')

@@ -23,10 +23,14 @@ corpus_path = working_dir + '/corpus_protect/en3/corpus_final.csv'
 fc=open(in_corpus_path,'a')
 iss=open(issues_aiaaic_path, 'w')
 paragraph_issue_file=open(paragraph_issue_path, 'a')
-corpus_file=open(corpus_path, 'w', newline='')
 
-writer_corpus_csv = csv.writer(corpus_file)
-writer_corpus_csv.writerow(['ID','AIAAIC Link','Related link', 'AIAAIC Article Title', 'Technology', 'Purpose', 'Issues', 'Country','Text'])
+if os.path.exists(corpus_path):
+    corpus_file=open(corpus_path, 'a', newline='')
+    writer_corpus_csv = csv.writer(corpus_file)
+else:
+    corpus_file=open(corpus_path, 'w', newline='')
+    writer_corpus_csv = csv.writer(corpus_file)
+    writer_corpus_csv.writerow(['ID','AIAAIC Link','Related link', 'AIAAIC Article Title', 'Technology', 'Purpose', 'Issues', 'Country','Text'])
 
 # URL of the AIAAIC (AI, algorithmic, and automation incidents) list of articles 
 url_repo= "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents" 
@@ -35,7 +39,8 @@ url_repo= "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automatio
 black_list=['https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/são-geraldo-magela-drone-delivery','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/buenos-aires-sistema-de-reconocimiento-facial-de-prófugos','Engineer.ai misleading marketing','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery', 'https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org//aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/dall-e-image-generation-bias-stereotyping','https://www.aiaaic.org//aiaaic-repository','https://www.stuff.co.nz/motoring/300572609/video-captures-driverless-tesla-crashing-into-us3-million-private-jet','ValueError: unknown url type:','MoviePass 2.0 PreShow eye tracking','Pony.ai driverless test crash','Gdansk Primary School No. 2 meal payment verification', 'https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/berlin-südkreuz-rail-station-algorithmic-surveillance','https://www.aiaaic.orghttps://drive.google.com/open?id=1GkLO9BhqOp-JCm3pXpSJyyhJWty4P4XCwO4N4LjZ-jI','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/viogén-gender-violence-system','https://www.aiaaic.org/aiaaic-repository/ai-and-algorithmic-incidents-and-controversies/são-geraldo-magela-drone-delivery']
 
 # get the list of articles from the AIAAIC dataset
-list_repo=functions.get_repository_list(url_repo)
+#list_repo=functions.get_repository_list(url_repo)
+list_repo = functions.temporal_list_articles(working_dir)
 
 matrix_repo=list()
 
@@ -49,7 +54,7 @@ url_counter=1
 counter = 0
 for url_m in matrix_repo:
     print("=============",counter,"-",all_files,"============")
-    counter = counter + 1
+    #counter = counter + 1
     """"   
     if counter > 25:
         break
@@ -64,6 +69,7 @@ for url_m in matrix_repo:
     if(url+'\n' in in_corpus_lines):
         pass
     else:
+        counter = counter + 1
         if((url not in black_list) ):
             fc.write(url+'\n')
             #print('-->',url)
@@ -104,7 +110,7 @@ for url_m in matrix_repo:
                 text_list=functions.get_text_link(url_link, issue)
                 if text_list != "" or len(text_list) > 0:
                     documents_text.append(' '.join(text_list))
-                    partial_result_file=open(working_dir+'/corpus_protect/en3/corpus'+str(url_counter)+'_'+str(links_counter)+'.txt', 'a')
+                    partial_result_file=open(working_dir+'/corpus_protect/en3/corpus_BLANK_'+str(url_counter)+'_'+str(links_counter)+'.txt', 'a')
                     partial_result_file.write('AIAAIC link: '+url+'\n')
                     partial_result_file.write('Related link: '+url_link+'\n')
                     partial_result_file.write('Title: '+title+'\n')
@@ -120,7 +126,7 @@ for url_m in matrix_repo:
                         if len(text_al) > 100:
                             for j in tokenize.sent_tokenize(text_al):
                                 printable_text = ''.join([str(char) for char in j if char in string.printable])
-                                writer_corpus_csv.writerow([ str(url_counter)+'_'+str(links_counter), url, url_link, title, technology.replace(';','|'), purpose, l_issues_join, country, printable_text.strip()])#se escribe en formato csv
+                                writer_corpus_csv.writerow([ "BLANK_"+str(url_counter)+'_'+str(links_counter), url, url_link, title, technology.replace(';','|'), purpose, l_issues_join, country, printable_text.strip()])#se escribe en formato csv
                                 write_file = True
                 if write_file:
                     links_counter += 1 
