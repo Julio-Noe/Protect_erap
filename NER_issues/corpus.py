@@ -18,15 +18,21 @@ import corpus_functions as cp
 print("loading dataset...")
 working_dir = os.getcwd() + '/AIAAIC corpus'
 #Create table [id, sentence]
-table = cp.create_table_id_text(working_dir+'/corpus_final.csv') 
+table = cp.create_table_id_text(working_dir+'/AIAAIC_corpus-10-2023.csv') 
 print("dataset loaded")
 
-vocab = cp.read_my_vocabulary('/vocab.csv', 9)#se forma una columna solo del vocabulario.
-#vocab = cp.read_my_ai_vocabulary('./ai_act_list_concepts')
+#vocab = cp.read_my_vocabulary('/vocab.csv', 9)#se forma una columna solo del vocabulario.
+#vocab = cp.read_my_ai_vocabulary('/ai_act_list_concepts.txt')
+#vocab = cp.read_my_ai_vocabulary('/risk_list_concepts.txt')
+vocab = cp.read_my_ai_vocabulary('/dpv_list_concepts.txt')
 
 #train_data = cp.search_term_in_sent(table[0], vocab) #corpus json por oraciones
 
-cp.training_data_generation_by_sentence(table[0], vocab) #corpus json por oraciones
+type_model = ['ai_act', 'ethical_issue','risk','dpv']
+
+print("Type model selected: ", type_model[3])
+
+cp.training_data_generation_by_sentence(table[0], vocab, type_model[3]) #corpus json por oraciones
 
 '''
 test=str()#test es todo el texto plano del corpus
