@@ -1,0 +1,154 @@
+,line #,sentence,Annotator,Named entity,URL
+0,1,"The reason for this focus is twofold: it suits the theme of this work package (WP2), namely the ‘ethics of personalization’, and secondly, facial recognition technology has mainly received attention (with regards to ethics) for its use in security and law enforcement, while the technology has much potential to serve as a personalization tool to commercial parties.",AI Act,law enforcement,http://tair.adaptcentre.ie/ontologies/tair/LawEnforcement
+0,1,The objective of this case study is to analyze the ethical implications of the use of facial recognition for personalization purposes.,Data protection,use,https://w3id.org/dpv#Use
+0,1,"Hence, the technology studied in this case study includes any instance of a facial recognition system that can facilitate personalization.",Data protection,technology,https://w3id.org/dpv#Technology
+0,1,"The reason for this focus is twofold: it suits the theme of this work package (WP2), namely the ‘ethics of personalization’, and secondly, facial recognition technology has mainly received attention (with regards to ethics) for its use in security and law enforcement, while the technology has much potential to serve as a personalization tool to commercial parties.",Data protection,technology,https://w3id.org/dpv#Technology
+0,1,"The reason for this focus is twofold: it suits the theme of this work package (WP2), namely the ‘ethics of personalization’, and secondly, facial recognition technology has mainly received attention (with regards to ethics) for its use in security and law enforcement, while the technology has much potential to serve as a personalization tool to commercial parties.",Data protection,law,https://w3id.org/dpv#Law
+0,1,"The reason for this focus is twofold: it suits the theme of this work package (WP2), namely the ‘ethics of personalization’, and secondly, facial recognition technology has mainly received attention (with regards to ethics) for its use in security and law enforcement, while the technology has much potential to serve as a personalization tool to commercial parties.",Data protection,technology,https://w3id.org/dpv#Technology
+0,2,"	As explained in the first deliverable of WP2, the term ‘facial recognition’ is used in this case study to refer to systems meant to identify individuals on the basis of images of their face (also known as ‘identification systems’), as well as systems meant to infer a person’s traits or characteristics from the person’s facial features (so-called ‘categorization systems’ or ‘facial analysis’).",Data protection,infer,https://w3id.org/dpv#Infer
+0,2,"However, there have also been attempts to infer from one’s facial features their sexual preference, religious beliefs, or the likelihood that they would commit a crime (for an example, see BBC News 2017).",Data protection,infer,https://w3id.org/dpv#Infer
+0,2,"However, there have also been attempts to infer from one’s facial features their sexual preference, religious beliefs, or the likelihood that they would commit a crime (for an example, see BBC News 2017).",Data protection,likelihood,https://w3id.org/dpv#Likelihood
+0,3,one with a customer account or someone that regularly visits) or a known user (e.g.,AI Act,user,http://tair.adaptcentre.ie/ontologies/tair/User
+0,3,Identifying a person by means of facial recognition can serve personalization purposes by recognizing a known customer (e.g.,Data protection,customer,https://w3id.org/dpv#Customer
+0,3,one with a customer account or someone that regularly visits) or a known user (e.g.,Data protection,customer,https://w3id.org/dpv#Customer
+0,4,"Emotion recognition, specifically, can improve personal interaction with social robots (Khosla et al.",Ethics,emotion,http://eaontology.linkeddata.es/def/Emotion
+0,7,The second finding was that the more pessimistic visions of facial recognition focus almost entirely on the use of facial recognition by security agencies or law enforcement.,AI Act,law enforcement,http://tair.adaptcentre.ie/ontologies/tair/LawEnforcement
+0,7,"In the case of the use of facial recognition for personalization, there were two major findings of this assessment.",Data protection,use,https://w3id.org/dpv#Use
+0,7,"In the case of the use of facial recognition for personalization, there were two major findings of this assessment.",Data protection,assessment,https://w3id.org/dpv#Assessment
+0,7,"First of all, it was found that there exist both optimistic and pessimistic visions of the future in which facial recognition has become a widely used technology in society.",Data protection,technology,https://w3id.org/dpv#Technology
+0,7,"The optimistic views, the promises, predominantly represented by the companies that develop and sell facial recognition technology.",Data protection,technology,https://w3id.org/dpv#Technology
+0,7,The second finding was that the more pessimistic visions of facial recognition focus almost entirely on the use of facial recognition by security agencies or law enforcement.,Data protection,use,https://w3id.org/dpv#Use
+0,7,The second finding was that the more pessimistic visions of facial recognition focus almost entirely on the use of facial recognition by security agencies or law enforcement.,Data protection,law,https://w3id.org/dpv#Law
+0,7,This means that there is a gap when it comes to the discussion of the desirability of the use of facial recognition for personalization purposes.,Data protection,use,https://w3id.org/dpv#Use
+0,8,"There appears to be a lack of critical assessment of the problematic ethical and societal implications of emerging facial recognition systems meant not to serve law enforcement, but business owners who utilize the tool to support the personalization of goods and services.",AI Act,law enforcement,http://tair.adaptcentre.ie/ontologies/tair/LawEnforcement
+0,8,"	The findings in the second deliverable were in line with the critical search conducted in the first deliverable of WP2, where we concluded that even though the ethics of facial recognition in general has received considerable attention by academics, policy makers and journalists, there is little literature to be found on the potential implications of the use of facial recognition for personalization purposes specifically.",Data protection,policy,https://w3id.org/dpv#Policy
+0,8,"	The findings in the second deliverable were in line with the critical search conducted in the first deliverable of WP2, where we concluded that even though the ethics of facial recognition in general has received considerable attention by academics, policy makers and journalists, there is little literature to be found on the potential implications of the use of facial recognition for personalization purposes specifically.",Data protection,use,https://w3id.org/dpv#Use
+0,8,"There appears to be a lack of critical assessment of the problematic ethical and societal implications of emerging facial recognition systems meant not to serve law enforcement, but business owners who utilize the tool to support the personalization of goods and services.",Data protection,assessment,https://w3id.org/dpv#Assessment
+0,8,"There appears to be a lack of critical assessment of the problematic ethical and societal implications of emerging facial recognition systems meant not to serve law enforcement, but business owners who utilize the tool to support the personalization of goods and services.",Data protection,law,https://w3id.org/dpv#Law
+0,13,26.2.1	 Environmental harm,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,13,26.2.1	 Environmental harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,14,"For facial recognition to function, large amounts of data need to be processed and, thus, stored.",Data protection,data,https://w3id.org/dpv#Data
+0,14,"This does not happen only in ‘the cloud’, it requires data storage centers and a lot of energy.",Data protection,data,https://w3id.org/dpv#Data
+0,16,26.2.2	Social harm,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,16,26.2.2	Social harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,17,26.2.2.1	Harm to social relations,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,17,26.2.2.1	Harm to social relations,Data protection,harm,https://w3id.org/dpv#Harm
+0,20,Harm to the interests of societal groups,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,20,Harm to the interests of societal groups,Data protection,harm,https://w3id.org/dpv#Harm
+0,23,26.2.2.3	Harm to social values,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,23,26.2.2.3	Harm to social values,Data protection,harm,https://w3id.org/dpv#Harm
+0,29,26.2.3	Health and bodily harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,30,There are no direct risks regarding health or physical harm related to the use of facial recognition for personalization.,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,30,Feeling the need to hide or change aspects of their appearance can be understood as a bodily harm.,Data protection,harm,https://w3id.org/dpv#Harm
+0,32,26.2.4	Pain and suffering,Ethics,pain and suffering,http://eaontology.linkeddata.es/def/PainAndSuffering
+0,33,It does not appear to be likely that the use of facial recognition for personalization will lead to pain and suffering.,Ethics,pain and suffering,http://eaontology.linkeddata.es/def/PainAndSuffering
+0,33,It does not appear to be likely that the use of facial recognition for personalization will lead to pain and suffering.,Data protection,use,https://w3id.org/dpv#Use
+0,35,26.2.5	Psychological harm,Ethics,psychological harm,http://eaontology.linkeddata.es/def/PsychologicalHarm
+0,35,26.2.5	Psychological harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,36,"These different forms of misrecognition could have a negative impact on people’s self-perception and the development of self-confidence and self-esteem, in the same way that a lack of recognition or respect from other humans can negatively affect a person’s self-development (Waelen 2022).",Data protection,impact,https://w3id.org/dpv#Impact
+0,42,26.3.2	Autonomy,Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,44,"Although personalization does not take one’s ability to make independent choices away in any literal, direct sense, it does challenge this ability in the sense that we forget or do not know how to ignore the recommendations made by a personalization system or look beyond them (see also 4.2.2).",AI Act,4.2.2,http://tair.adaptcentre.ie/ontologies/tair/4.2.2
+0,47,"So even if we might feel that we make our own consumer choices, because we really want the product that a personalized recommendation system showed us, it can be the case the we grew to want that product because of the recommendation system.",Data protection,consumer,https://w3id.org/dpv#Consumer
+0,51,	Another question is: who can be held accountable for the ethical implications of the use of facial recognition for personalization?,Data protection,use,https://w3id.org/dpv#Use
+0,51,"The answer here can be the engineers in charge of developing the system, the company selling the system, or the entity that employs the system.",Data protection,entity,https://w3id.org/dpv#Entity
+0,52,26.3.2.4	Informed consent,Data protection,consent,https://w3id.org/dpv#Consent
+0,53,Online personalization systems – for example those that filter our news feed or recommend products in a web shop – can ask for consent by making users confirm that they read the terms and conditions.,Data protection,filter,https://w3id.org/dpv#Filter
+0,53,Online personalization systems – for example those that filter our news feed or recommend products in a web shop – can ask for consent by making users confirm that they read the terms and conditions.,Data protection,consent,https://w3id.org/dpv#Consent
+0,53,"Asking for consent is more challenging in such a context, but not necessarily impossible.",Data protection,consent,https://w3id.org/dpv#Consent
+0,53,"Asking for consent is more challenging in such a context, but not necessarily impossible.",Data protection,context,https://w3id.org/dpv#Context
+0,58,26.3.3.1	Freedom of assembly,Ethics,freedom,http://eaontology.linkeddata.es/def/Freedom
+0,59,"However, these threats are not so much related to the use of facial recognition for the personalization of goods and services, but rather to the use of facial recognition by law enforcement.",AI Act,law enforcement,http://tair.adaptcentre.ie/ontologies/tair/LawEnforcement
+0,59,"Facial recognition technology, in general, can be seen as a threat to the freedom of assembly, movement and expression (e.g.",Data protection,technology,https://w3id.org/dpv#Technology
+0,59,"The worry is that, because facial recognition makes it possible to trace people’s whereabouts and determine who participated in a protest or demonstration, people will feel less free to move around freely in public and express their views (whether it is by participating in a protest or wearing clothes with political slogans printed on them).",Data protection,move,https://w3id.org/dpv#Move
+0,59,"However, these threats are not so much related to the use of facial recognition for the personalization of goods and services, but rather to the use of facial recognition by law enforcement.",Data protection,use,https://w3id.org/dpv#Use
+0,59,"However, these threats are not so much related to the use of facial recognition for the personalization of goods and services, but rather to the use of facial recognition by law enforcement.",Data protection,use,https://w3id.org/dpv#Use
+0,59,"However, these threats are not so much related to the use of facial recognition for the personalization of goods and services, but rather to the use of facial recognition by law enforcement.",Data protection,law,https://w3id.org/dpv#Law
+0,61,26.3.3.2	Freedom of movement,Ethics,freedom of movement,http://eaontology.linkeddata.es/def/FreedomOfMovement
+0,63,26.3.3.3	Freedom of speech and expression,Ethics,freedom,http://eaontology.linkeddata.es/def/Freedom
+0,65,26.3.4	Human dignity,Ethics,human dignity,http://eaontology.linkeddata.es/def/HumanDignity
+0,66,Such forms of misidentification are an offense to human dignity.,Ethics,human dignity,http://eaontology.linkeddata.es/def/HumanDignity
+0,67,"	Furthermore, the fact that very personal data (our demographics, sentiment, preferences, and so on) is gathered in a very intimate way (namely by analyzing our facial features and expressions), for the mere purpose of increasing profit through personalization, too can be understood us insulting or a violation of our human dignity.",Ethics,human dignity,http://eaontology.linkeddata.es/def/HumanDignity
+0,67,"	Furthermore, the fact that very personal data (our demographics, sentiment, preferences, and so on) is gathered in a very intimate way (namely by analyzing our facial features and expressions), for the mere purpose of increasing profit through personalization, too can be understood us insulting or a violation of our human dignity.",Data protection,purpose,https://w3id.org/dpv#Purpose
+0,69,26.3.5	Privacy,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,71,"The extent to which the use of facial recognition for personalization violates informational privacy seems disproportionate to the benefits it brings, namely personalized goods and services.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,71,"Facial recognition tools for personalization can gather and combine a wide variety of information: our demographic information, our sentiment at a given time, but also our purchase history, what times we go to stores, and so on.",Data protection,combine,https://w3id.org/dpv#Combine
+0,71,"Hence, the places where otherwise shop more or less anonymously could now know a lot about us.",Data protection,hence,https://w3id.org/dpv#Hence
+0,71,"The extent to which the use of facial recognition for personalization violates informational privacy seems disproportionate to the benefits it brings, namely personalized goods and services.",Data protection,use,https://w3id.org/dpv#Use
+0,72,26.3.5.2	Bodily privacy,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,73,"Facial recognition for personalization not only allows businesses to acquire a lot of personal information about us – customer cards or chatty shop assistants can do that too – but it is information derived from a part of our body, a part which we cannot hide.",Data protection,customer,https://w3id.org/dpv#Customer
+0,73,This makes the data gathering and analysis more intimate and possibly intrusive.,Data protection,data,https://w3id.org/dpv#Data
+0,75,26.3.5.3	Relational privacy,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,78,26.3.6	Property,Ethics,property,http://eaontology.linkeddata.es/def/Property
+0,79,26.3.6.1	Intellectual property rights,Ethics,property,http://eaontology.linkeddata.es/def/Property
+0,81,26.3.6.2	Right to property,Data protection,right,https://w3id.org/dpv#Right
+0,84,26.3.7.1	Right to engage in peaceful protest,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,84,26.3.7.1	Right to engage in peaceful protest,Data protection,right,https://w3id.org/dpv#Right
+0,86,26.3.7.2	Right to have a fair trial,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,86,26.3.7.2	Right to have a fair trial,Data protection,right,https://w3id.org/dpv#Right
+0,88,26.3.7.3	Right to life,Data protection,right,https://w3id.org/dpv#Right
+0,90,26.3.7.4	Right to practice one’s religion,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,90,26.3.7.4	Right to practice one’s religion,Data protection,right,https://w3id.org/dpv#Right
+0,91,when the person wears a kippah or hijab) does not infringe on the right to practice one’s religion.,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,91,when the person wears a kippah or hijab) does not infringe on the right to practice one’s religion.,Data protection,right,https://w3id.org/dpv#Right
+0,92,26.3.7.5	Right to pursue happiness,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,92,26.3.7.5	Right to pursue happiness,Data protection,right,https://w3id.org/dpv#Right
+0,94,26.3.7.6	Right to receive an education,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,94,26.3.7.6	Right to receive an education,Data protection,right,https://w3id.org/dpv#Right
+0,96,26.3.7.7	Right to seek asylum,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,96,26.3.7.7	Right to seek asylum,Data protection,right,https://w3id.org/dpv#Right
+0,98,26.3.7.8	Right to vote,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,98,26.3.7.8	Right to vote,Data protection,right,https://w3id.org/dpv#Right
+0,100,26.4	Justice,Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,101,26.4.1	 Capabilities,Data protection,26.4.1,https://w3id.org/dpv#26.4.1
+0,102,26.4.1.1	Life,Ethics,life,http://eaontology.linkeddata.es/def/Life
+0,107,Bodily integrity might be compromised by the use of facial recognition to the extend that it limits a person’s capability to move freely from place to place (Nussbaum 2011).,Ethics,capability,http://eaontology.linkeddata.es/def/Capability
+0,107,It can limit this capability by making people feel like they can no longer count on a certain level of anonymity in public.,Ethics,capability,http://eaontology.linkeddata.es/def/Capability
+0,107,Bodily integrity might be compromised by the use of facial recognition to the extend that it limits a person’s capability to move freely from place to place (Nussbaum 2011).,Data protection,use,https://w3id.org/dpv#Use
+0,107,Bodily integrity might be compromised by the use of facial recognition to the extend that it limits a person’s capability to move freely from place to place (Nussbaum 2011).,Data protection,move,https://w3id.org/dpv#Move
+0,114,"According to Nussbaum, this capability implies that a person’s emotional development is not ruined by feelings of fear or anxiety.",Ethics,capability,http://eaontology.linkeddata.es/def/Capability
+0,114,"Moreover, facial recognition can involve emotion analysis.",Ethics,emotion,http://eaontology.linkeddata.es/def/Emotion
+0,114,"For some, knowing that one is watched and analyzed by smart cameras can give rise to fear or anxiety – which might them have a negative impact on the person’s emotional development.",Data protection,impact,https://w3id.org/dpv#Impact
+0,118,This capability includes having the social foundation needed for self-respect.,Ethics,capability,http://eaontology.linkeddata.es/def/Capability
+0,121,26.4.1.11	Play,Ethics,play,http://eaontology.linkeddata.es/def/Play
+0,122,"In line with the point made in 4.4.1.6., emotion analysis by facial recognition systems might lead people to suppress their inner feelings, including suppressing their expressions of enjoyment.",Ethics,emotion,http://eaontology.linkeddata.es/def/Emotion
+0,125,"The capability to own our political choices can be affected by facial recognition for personalization, because personalization serves not only commercial purposes but also political campaigns.",Ethics,capability,http://eaontology.linkeddata.es/def/Capability
+0,125,"Hence, it gives others the power to influence our political preferences and voting behavior.",Data protection,hence,https://w3id.org/dpv#Hence
+0,127,26.4.2	 	Global Justice,Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,128,"The use of facial recognition for personalization is costly, in that it requires not only purchasing or developing facial recognition software, but also having cameras to obtain video footage to analyze and having an infrastructure in place to show personalized adds, products, recommendations, and so on.",Data protection,use,https://w3id.org/dpv#Use
+0,128,"The use of facial recognition for personalization is costly, in that it requires not only purchasing or developing facial recognition software, but also having cameras to obtain video footage to analyze and having an infrastructure in place to show personalized adds, products, recommendations, and so on.",Data protection,obtain,https://w3id.org/dpv#Obtain
+0,128,"Businesses in the global North are more likely to adopt facial recognition tools for personalization and, hence, benefit from them.",Data protection,benefit,https://w3id.org/dpv#Benefit
+0,129,"	Another reason why businesses in some parts of the world could benefit from the use of facial recognition for personalization and others cannot, is that some countries might regulate the use of facial recognition which prevents businesses in those countries from using it for personalization purposes altogether.",Data protection,use,https://w3id.org/dpv#Use
+0,131,26.4.3	Intergenerational justice,Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,132,The way we regulate the development and use of facial recognition for personalization purposes now is defining for the possible impact it can have on future generations.,Data protection,use,https://w3id.org/dpv#Use
+0,132,The way we regulate the development and use of facial recognition for personalization purposes now is defining for the possible impact it can have on future generations.,Data protection,impact,https://w3id.org/dpv#Impact
+0,132,"Also, the technology is likely to improve over time, which should decrease the likelihood that certain ethical issues occur – such as discrimination (4.5.4.4.)",Data protection,technology,https://w3id.org/dpv#Technology
+0,138,"Some groups might face more issues when the use of facial recognition for personalization becomes a dominant technology in society, because they have to deal with stereotypes or discriminatory treatment that other societal groups do not experience.",Data protection,use,https://w3id.org/dpv#Use
+0,138,"Some groups might face more issues when the use of facial recognition for personalization becomes a dominant technology in society, because they have to deal with stereotypes or discriminatory treatment that other societal groups do not experience.",Data protection,technology,https://w3id.org/dpv#Technology
+0,138,"Outside of this issue, there is no reason to believe that some specific groups will profit or suffer more from the use of facial recognition by personalization than others.",Data protection,use,https://w3id.org/dpv#Use
+0,146,The technology might give recommendations based on disability that are experienced as being offensive.,Data protection,technology,https://w3id.org/dpv#Technology
+0,149,"To the extent that facial recognition systems could retrieve information about a person’s ethnicity, they might give recommendations based on ethnicity that are experienced as being offensive or discriminatory.",Data protection,retrieve,https://w3id.org/dpv#Retrieve
+0,153,only advertising household products to women) or discriminatory (e.g.,Data protection,advertising,https://w3id.org/dpv#Advertising
+0,166,It is unlikely that facial recognition systems used for personalization purposes will derive a person’s social class from their facial features and appearance.,Data protection,derive,https://w3id.org/dpv#Derive
+0,169,There are a number of power related issues in the context of facial recognition for personalization.,Data protection,context,https://w3id.org/dpv#Context
+0,169,"The first is the idea that this technology can disempower individuals, by decreasing their ability to make independent choices (see 4.3.2.)",Data protection,technology,https://w3id.org/dpv#Technology
+0,169,"As a consequence, the bigger ones that can afford facial recognition become even more powerful on the market.",Data protection,consequence,https://w3id.org/dpv#Consequence
+0,172,"Given that facial recognition systems have been found to perform worse on females, dark-skinned and young people, it could be the case these groups benefit less from the supposed benefits of personalization by means of facial recognition than other members of society.",Data protection,benefit,https://w3id.org/dpv#Benefit
+0,172,and make the technology less inclusive.,Data protection,technology,https://w3id.org/dpv#Technology
+0,174,26.5	Well-being and the common good,Data protection,26.5,https://w3id.org/dpv#26.5
+0,176,"The use of facial recognition for personalization is not in itself supportive or unsupportive of culture and cultural diversity, but it can be, depending on how a given facial recognition system is programmed.",Data protection,use,https://w3id.org/dpv#Use
+0,182,"To the extent that facial recognition contributes to the importance of the use of personalization to compete on the market, we can say that facial recognition systems for personalization do not support desirable economic structures.",Data protection,use,https://w3id.org/dpv#Use
+0,182,"When companies need to implement personalization tools (or other persuasive incentive structures) in order able to compete with other businesses, this will drive them to go beyond what would be considered acceptable or desirable forms of behavioral influencing (at least to the extent that it is possible under existing consumer protection regulations).",Data protection,consumer,https://w3id.org/dpv#Consumer
+0,186,"The assessment in Deliverable 2.2 showed that, according to those who develop and sell facial recognition for personalization, the technology should improve the customer experience and bring joy.",Data protection,assessment,https://w3id.org/dpv#Assessment
+0,186,"The assessment in Deliverable 2.2 showed that, according to those who develop and sell facial recognition for personalization, the technology should improve the customer experience and bring joy.",Data protection,technology,https://w3id.org/dpv#Technology
+0,194,"As facial recognition categorization systems usually make use of a set of pre-determined labels that ought to describe a person or capture their identity, it can teach people to labels others in the same kind of ways.",Data protection,use,https://w3id.org/dpv#Use
+0,198,Constantly being filmed can create a sense of discomfort and distrust towards the authority that is filming.,Risk,authority,http://www.w3id.org/vair#Authority
+0,198,The use of facial recognition for personalization would contribute to the use and presence of cameras in public places as well as on smart home devices.,Data protection,use,https://w3id.org/dpv#Use
+0,198,The use of facial recognition for personalization would contribute to the use and presence of cameras in public places as well as on smart home devices.,Data protection,use,https://w3id.org/dpv#Use
+0,198,Constantly being filmed can create a sense of discomfort and distrust towards the authority that is filming.,Data protection,authority,https://w3id.org/dpv#Authority
+0,202,"In that sense, the use of facial recognition for personalization could positively contribute to a person’s desire-fulfilment.",Data protection,use,https://w3id.org/dpv#Use
+0,206,The use of facial recognition for personalization raises a variety of ethical issues.,Data protection,use,https://w3id.org/dpv#Use
+0,206,"Some of these issues are shared by all facial recognition applications, such as the difficulty it poses to the requirement of (informed) consent.",Data protection,consent,https://w3id.org/dpv#Consent
+0,206,"For instance, the use of personalization in marketing and sales, whether it is online or in physical stores, creates a market in which competition is (at least partly) based on who is best at deceiving or manipulating costumers.",Data protection,use,https://w3id.org/dpv#Use
+0,206,"Furthermore, some issues, like the risk of discrimination or misrecognition, are not related to the use of facial recognition for personalization as such, but depend on the accuracy of the technology (i.e.",Data protection,risk,https://w3id.org/dpv#Risk
+0,206,"Furthermore, some issues, like the risk of discrimination or misrecognition, are not related to the use of facial recognition for personalization as such, but depend on the accuracy of the technology (i.e.",Data protection,use,https://w3id.org/dpv#Use
+0,206,"Furthermore, some issues, like the risk of discrimination or misrecognition, are not related to the use of facial recognition for personalization as such, but depend on the accuracy of the technology (i.e.",Data protection,technology,https://w3id.org/dpv#Technology

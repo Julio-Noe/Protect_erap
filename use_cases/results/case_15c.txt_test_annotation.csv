@@ -1,0 +1,185 @@
+,line #,sentence,Annotator,Named entity,URL
+0,1,"As such, personalized learning systems can be thought of as a collection of three elements: 1) personalization; 2) digital technology; and 3) education.",Data protection,technology,https://w3id.org/dpv#Technology
+0,2,"The combination of personalization and digital technology goes hand in hand with measurement, analytics, and the collection and processing of big data.",Data protection,technology,https://w3id.org/dpv#Technology
+0,2,"The combination of personalization and digital technology goes hand in hand with measurement, analytics, and the collection and processing of big data.",Data protection,data,https://w3id.org/dpv#Data
+0,2,"In the domain of learning, as discussed here, analytics are often referred to as learning analytics (Bellini et al., 2019) and data collection can be referred to as educational data mining (Avella et al., 2016).",Data protection,data,https://w3id.org/dpv#Data
+0,2,"In the domain of learning, as discussed here, analytics are often referred to as learning analytics (Bellini et al., 2019) and data collection can be referred to as educational data mining (Avella et al., 2016).",Data protection,data,https://w3id.org/dpv#Data
+0,2,"How the collection, processing, and use of educational data is performed is of key importance to the learning system as a whole; and thus for our moral analysis.",Data protection,importance,https://w3id.org/dpv#Importance
+0,3,"Finally, it should be emphasized that another important component of personalized learning systems are learning theories (Bulger, 2016).",Risk,bulger,http://www.w3id.org/vair#Bulger
+0,3,Personalized learning systems can hence not be simply described as a technology.,Data protection,technology,https://w3id.org/dpv#Technology
+0,5,"The promises and expectations we found were: 1) improvement in student performance; 2) increase in student engagement and satisfaction; 3) reduction in inequality; 4) reduction in the cost, time, and effort of education and of creating study materials; 5) teachers will support personalized learning; 6) personalized learning will become mainstream within five to ten years.",AI Act,performance,http://tair.adaptcentre.ie/ontologies/tair/Performance
+0,5,"As personalized learning systems are a novel and emerging technology, we are here concerned a study about the future.",Data protection,technology,https://w3id.org/dpv#Technology
+0,5,"The promises and expectations we found were: 1) improvement in student performance; 2) increase in student engagement and satisfaction; 3) reduction in inequality; 4) reduction in the cost, time, and effort of education and of creating study materials; 5) teachers will support personalized learning; 6) personalized learning will become mainstream within five to ten years.",Data protection,student,https://w3id.org/dpv#Student
+0,5,"The promises and expectations we found were: 1) improvement in student performance; 2) increase in student engagement and satisfaction; 3) reduction in inequality; 4) reduction in the cost, time, and effort of education and of creating study materials; 5) teachers will support personalized learning; 6) personalized learning will become mainstream within five to ten years.",Data protection,student,https://w3id.org/dpv#Student
+0,6,"Authors in the debate on the future of education have either a narrower conception of education as the acquisition of skills, especially those that will enable people to thrive in their professional lives), or a broader conception of education as the preparation for adulthood in all its facets, including having professional skills as well as leading a happy and healthy life, and being a responsible citizen.",Ethics,life,http://eaontology.linkeddata.es/def/Life
+0,6,"Authors in the debate on the future of education have either a narrower conception of education as the acquisition of skills, especially those that will enable people to thrive in their professional lives), or a broader conception of education as the preparation for adulthood in all its facets, including having professional skills as well as leading a happy and healthy life, and being a responsible citizen.",Data protection,citizen,https://w3id.org/dpv#Citizen
+0,7,"By analyzing the morality of the promises and expectations about personalized learning systems, we contribute to the debate on the future of education, as well as the role of digital technology within this future.",Data protection,technology,https://w3id.org/dpv#Technology
+0,10,23.2.1	Environmental harm,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,10,23.2.1	Environmental harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,12,23.2.2	Social harm,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,12,23.2.2	Social harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,13,23.2.2.1	2.2.1 Harm to social relations,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,13,23.2.2.1	2.2.1 Harm to social relations,Data protection,harm,https://w3id.org/dpv#Harm
+0,15,23.2.2.2	Harm to the interests of societal groups,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,15,23.2.2.2	Harm to the interests of societal groups,Data protection,harm,https://w3id.org/dpv#Harm
+0,17,23.2.2.3	Harm to social values,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,17,23.2.2.3	Harm to social values,Data protection,harm,https://w3id.org/dpv#Harm
+0,19,23.2.2.4	Harm to democratic life,Data protection,harm,https://w3id.org/dpv#Harm
+0,22,23.3.1	Health and bodily harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,24,23.3.2	Pain and suffering,Ethics,pain and suffering,http://eaontology.linkeddata.es/def/PainAndSuffering
+0,26,23.3.3	Psychological harm,Ethics,psychological harm,http://eaontology.linkeddata.es/def/PsychologicalHarm
+0,26,23.3.3	Psychological harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,31,23.4.2	Autonomy,Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,32,"However, others point to the potential harms for autonomy that personalized learning creates because it steers all learners to predefined goals, instead of allowing them to discover their own values (Knox et al., 2020).",Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,33,"If one adopts the narrow conception of education as preparing children for their professional lives, one may not see many harms to autonomy.",Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,33,"If on the other hand one adopts the broader conception of education as preparing children for all facets of adulthood, such as helping them to achieve prosperous and flourishing lives, one could argue that in order to become fully autonomous in the Aristotelean sense, education should help the student discover what a full and flourishing life means to her.",Ethics,life,http://eaontology.linkeddata.es/def/Life
+0,33,"If on the other hand one adopts the broader conception of education as preparing children for all facets of adulthood, such as helping them to achieve prosperous and flourishing lives, one could argue that in order to become fully autonomous in the Aristotelean sense, education should help the student discover what a full and flourishing life means to her.",Data protection,student,https://w3id.org/dpv#Student
+0,34,"However, this is not behaviourism in the way Skinner advocated it, as that denied the existence or relevance of cognition and emotion.",Ethics,emotion,http://eaontology.linkeddata.es/def/Emotion
+0,34,"In any case, it can be argued that the more psychologically inspired ways to alter student behaviour a system uses, the more her autonomy is jeopardized.",Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,34,"Instead, they “appear to work against notions of student autonomy and participation, seeking to intervene in educational conduct and shaping learner behaviour towards predefined aims” (Knox et al., 2020, p 31).",Ethics,autonomy,http://eaontology.linkeddata.es/def/Autonomy
+0,34,They also use psychological mechanisms with the aim of improving student retention rates and engagement rates.,Data protection,use,https://w3id.org/dpv#Use
+0,34,They also use psychological mechanisms with the aim of improving student retention rates and engagement rates.,Data protection,student,https://w3id.org/dpv#Student
+0,34,"As these systems capture large amounts of (behavioural) data on students and offer personalized experiences, they are potentially highly effective at doing so.",Data protection,data,https://w3id.org/dpv#Data
+0,34,"Some authors have argued that this reintroduces the spirit of behaviourism into education: “through the growing influence of ‘data science’ on education, behaviourist psychology is increasingly and powerfully invested in future educational practices” (Knox et al., 2020, p 31).",Data protection,data,https://w3id.org/dpv#Data
+0,34,"Some authors have argued that this reintroduces the spirit of behaviourism into education: “through the growing influence of ‘data science’ on education, behaviourist psychology is increasingly and powerfully invested in future educational practices” (Knox et al., 2020, p 31).",Data protection,2020,https://w3id.org/dpv#2020
+0,34,"In any case, it can be argued that the more psychologically inspired ways to alter student behaviour a system uses, the more her autonomy is jeopardized.",Data protection,student,https://w3id.org/dpv#Student
+0,34,Systems that heavily rely on behaviour modification techniques do not connect with student motivation.,Data protection,student,https://w3id.org/dpv#Student
+0,34,"Instead, they “appear to work against notions of student autonomy and participation, seeking to intervene in educational conduct and shaping learner behaviour towards predefined aims” (Knox et al., 2020, p 31).",Data protection,student,https://w3id.org/dpv#Student
+0,34,"Instead, they “appear to work against notions of student autonomy and participation, seeking to intervene in educational conduct and shaping learner behaviour towards predefined aims” (Knox et al., 2020, p 31).",Data protection,2020,https://w3id.org/dpv#2020
+0,37,"While ideally educators would help students to form their own opinions, every decision in the construction of curricula is fraught with value-laden, and sometimes controversial.",Risk,educators,http://www.w3id.org/vair#Educators
+0,37,The ability to think one’s own thought and form one’s own opinions is a complex issue to discuss in the context of education.,Data protection,context,https://w3id.org/dpv#Context
+0,37,Education is by definition an attempt to form affect the way student’s think.,Data protection,student,https://w3id.org/dpv#Student
+0,39,"Questions about the desirability of reducing performance to machine readable metrics aside, this practice drastically changes the accountability of students for their work.",AI Act,performance,http://tair.adaptcentre.ie/ontologies/tair/Performance
+0,39,"However, if the evaluation of one’s performance is reduced to a metric, all those things are lost.",AI Act,performance,http://tair.adaptcentre.ie/ontologies/tair/Performance
+0,39,"First, these systems require an objective standard of evaluating student work.",Data protection,student,https://w3id.org/dpv#Student
+0,39,"This practice illustrates what Muller defines as “the tyranny of metrics”, which is partially defined as “the belief that it is possible and desirable to replace judgment, acquired by experience and talent, with numerical indicators based upon standardized data” (Muller, 2018, chronicle).",Data protection,data,https://w3id.org/dpv#Data
+0,39,"As quality is hard to measure in many cases, the system is bound to use proxies.",Data protection,use,https://w3id.org/dpv#Use
+0,39,"However, student populations, who depend on being scored favorable for their futures, are bound to find out what the proxies are.",Data protection,student,https://w3id.org/dpv#Student
+0,39,"Hence, the term gaming the system.",Data protection,hence,https://w3id.org/dpv#Hence
+0,40,"This will also mean they are less accountable for their actions, which may lead to a sense of loss of control for the teacher, as well as to a drop in performance.",AI Act,performance,http://tair.adaptcentre.ie/ontologies/tair/Performance
+0,40,"Second, the accountability of teachers needs to be revised when they make use of personalized learning systems.",Data protection,use,https://w3id.org/dpv#Use
+0,42,23.4.2.3	Informed consent,Data protection,consent,https://w3id.org/dpv#Consent
+0,47,23.4.3.1	Freedom of assembly,Ethics,freedom,http://eaontology.linkeddata.es/def/Freedom
+0,49,23.4.3.2	Freedom of movement,Ethics,freedom of movement,http://eaontology.linkeddata.es/def/FreedomOfMovement
+0,51,23.4.3.3	Freedom of speech and expression,Ethics,freedom,http://eaontology.linkeddata.es/def/Freedom
+0,54,23.4.4	Human dignity,Ethics,human dignity,http://eaontology.linkeddata.es/def/HumanDignity
+0,55,The opposite of human dignity can be humiliation are using people as means.,Ethics,human dignity,http://eaontology.linkeddata.es/def/HumanDignity
+0,55,Personalized learning systems are at risk of violating human dignity in three ways.,Data protection,risk,https://w3id.org/dpv#Risk
+0,55,"When students make use of personalized system in the context of a classroom or a course, they are likely to compare their speed of going through the material and their marks with others.",Data protection,use,https://w3id.org/dpv#Use
+0,55,"When students make use of personalized system in the context of a classroom or a course, they are likely to compare their speed of going through the material and their marks with others.",Data protection,context,https://w3id.org/dpv#Context
+0,55,"When certain students find out they are among the slower or lower performers, or they find out that their best effort is not sufficient for maintaining the speed of their classmates, this can be humiliating for the student.",Data protection,student,https://w3id.org/dpv#Student
+0,55,"Techniques to motivate Third and finally, many personalized learning systems make use of rewards that aim to reinforce desired behavior.",Data protection,use,https://w3id.org/dpv#Use
+0,55,"While such mechanisms may increase student retention, they are a poor and empty substitute for real recognition.",Data protection,student,https://w3id.org/dpv#Student
+0,55,These rewards systems are a shallow form of praise that does not connect with a student’s self-chosen reasons for following education.,Data protection,student,https://w3id.org/dpv#Student
+0,55,"Instead, it seeks to capture the student’s attention by appealing to their more basic instincts.",Data protection,student,https://w3id.org/dpv#Student
+0,56,23.4.5	Privacy,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,59,"If the system requires the student to use her microphone and camera, even more information of the user can be revealed and special issues may arise as a consequence (see the case study on facial recognition).",AI Act,user,http://tair.adaptcentre.ie/ontologies/tair/User
+0,59,"First of all, systems often hold demographic data of students like gender and age (Bienkowski et al., 2012).",Data protection,data,https://w3id.org/dpv#Data
+0,59,"In addition, as the learner potentially interacts frequently with the systems, over a long period of time, the system can build a strong profile of the learner from behavioral data.",Data protection,data,https://w3id.org/dpv#Data
+0,59,"If the system requires the student to use her microphone and camera, even more information of the user can be revealed and special issues may arise as a consequence (see the case study on facial recognition).",Data protection,use,https://w3id.org/dpv#Use
+0,59,"If the system requires the student to use her microphone and camera, even more information of the user can be revealed and special issues may arise as a consequence (see the case study on facial recognition).",Data protection,user,https://w3id.org/dpv#User
+0,59,"If the system requires the student to use her microphone and camera, even more information of the user can be revealed and special issues may arise as a consequence (see the case study on facial recognition).",Data protection,consequence,https://w3id.org/dpv#Consequence
+0,60,"Of all of these types of data, four questions must be asked to come to an assessment according to Lynch (2017): “1) who owns educational data; 2) who can or must consent to data collection; 3) who has the right to access stored data and for what purpose?",Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,60,"; 4) What, if any, rights do students, instructors, or even educational institutions have to privacy or anonymity in their educational records?” (p 250).",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,60,How educational institutions deal with these matters influences how invasive the personalized learning system is to the privacy of the student.,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,60,"However, in other areas privacy laws are not as stringent, creating additional moral issues.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,60,"Of all of these types of data, four questions must be asked to come to an assessment according to Lynch (2017): “1) who owns educational data; 2) who can or must consent to data collection; 3) who has the right to access stored data and for what purpose?",Data protection,data,https://w3id.org/dpv#Data
+0,60,"Of all of these types of data, four questions must be asked to come to an assessment according to Lynch (2017): “1) who owns educational data; 2) who can or must consent to data collection; 3) who has the right to access stored data and for what purpose?",Data protection,assessment,https://w3id.org/dpv#Assessment
+0,60,"Of all of these types of data, four questions must be asked to come to an assessment according to Lynch (2017): “1) who owns educational data; 2) who can or must consent to data collection; 3) who has the right to access stored data and for what purpose?",Data protection,data,https://w3id.org/dpv#Data
+0,60,How educational institutions deal with these matters influences how invasive the personalized learning system is to the privacy of the student.,Data protection,student,https://w3id.org/dpv#Student
+0,60,"The more invasive a system is, the larger the need for justification of this invasion becomes.",Data protection,justification,https://w3id.org/dpv#Justification
+0,60,"So, educational institutions should monitor the proportionality of their data collection practices.",Data protection,monitor,https://w3id.org/dpv#Monitor
+0,60,"So, educational institutions should monitor the proportionality of their data collection practices.",Data protection,data,https://w3id.org/dpv#Data
+0,60,"Ideally, it is first, abundantly clear to students and teachers how ownership is (legally) arranged while make use of the system.",Data protection,use,https://w3id.org/dpv#Use
+0,60,"Second, students and their parents understand and consent to all uses of data.",Data protection,consent,https://w3id.org/dpv#Consent
+0,60,"Second, students and their parents understand and consent to all uses of data.",Data protection,data,https://w3id.org/dpv#Data
+0,60,"Third, data are only collected when this is conducive to the learning process of the student, and data are permanently deleted when this is no longer the case.",Data protection,data,https://w3id.org/dpv#Data
+0,60,"Third, data are only collected when this is conducive to the learning process of the student, and data are permanently deleted when this is no longer the case.",Data protection,data,https://w3id.org/dpv#Data
+0,60,"In Europa, GDPR enforces many of these stipulations and educational institutions are to respect limits to which data can be collected, stored, or used (Bellini et al., 2019).",Data protection,data,https://w3id.org/dpv#Data
+0,61,Bodily privacy,Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,64,"However, if a group of students collaborates guided by a digital system, and the students have access to each other’s information, this creates a potential threat to relational privacy.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,64,"Relational privacy “consists in people voluntarily limiting their knowledge of each other as they interact in a wide variety of social and commercial roles” (Sloan & Warner, 2016, p 347).",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,64,"However, if a group of students collaborates guided by a digital system, and the students have access to each other’s information, this creates a potential threat to relational privacy.",Risk,group,http://www.w3id.org/vair#Group
+0,64,"However, if a group of students collaborates guided by a digital system, and the students have access to each other’s information, this creates a potential threat to relational privacy.",Data protection,access,https://w3id.org/dpv#Access
+0,65,"To respect the privacy of collaborating students, or even the privacy of study-groups, designers of personalized learning systems should carefully consider which data students (or study-groups) need of one another.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,65,"To respect the privacy of collaborating students, or even the privacy of study-groups, designers of personalized learning systems should carefully consider which data students (or study-groups) need of one another.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
+0,65,"To respect the privacy of collaborating students, or even the privacy of study-groups, designers of personalized learning systems should carefully consider which data students (or study-groups) need of one another.",Data protection,data,https://w3id.org/dpv#Data
+0,66,Another relation that needs consideration is the relation between teacher and student.,Data protection,student,https://w3id.org/dpv#Student
+0,66,Personalized learning systems can change educational practices and as such affect student-teacher relations.,Data protection,student,https://w3id.org/dpv#Student
+0,66,"For example, when students follow their own learning paths, directed by artificial intelligence, the teacher’s relation with the student becomes more distant.",Data protection,student,https://w3id.org/dpv#Student
+0,66,"When the relation between teacher and student becomes more distant, it might be considered appropriate to give the teacher less information of the student.",Data protection,student,https://w3id.org/dpv#Student
+0,66,"When the relation between teacher and student becomes more distant, it might be considered appropriate to give the teacher less information of the student.",Data protection,student,https://w3id.org/dpv#Student
+0,67,23.4.6	Property,Ethics,property,http://eaontology.linkeddata.es/def/Property
+0,68,23.4.6.1	Intellectual property rights,Ethics,property,http://eaontology.linkeddata.es/def/Property
+0,69,"While “student records are traditionally” the property of “the school or district”, the data may be stored on a server owned by the technology vendor (Regan & Jesse, 2019, p 173).",Ethics,property,http://eaontology.linkeddata.es/def/Property
+0,69,"While “student records are traditionally” the property of “the school or district”, the data may be stored on a server owned by the technology vendor (Regan & Jesse, 2019, p 173).",Data protection,student,https://w3id.org/dpv#Student
+0,69,"While “student records are traditionally” the property of “the school or district”, the data may be stored on a server owned by the technology vendor (Regan & Jesse, 2019, p 173).",Data protection,data,https://w3id.org/dpv#Data
+0,69,"While “student records are traditionally” the property of “the school or district”, the data may be stored on a server owned by the technology vendor (Regan & Jesse, 2019, p 173).",Data protection,technology,https://w3id.org/dpv#Technology
+0,69,"If a student wants to claim his creations as his own, and repurpose or sell them, is he allowed to do this?",Data protection,student,https://w3id.org/dpv#Student
+0,69,"Does she have full ownership over her creations, or does the owner of the sever on which the data are stored (partially) share ownership over it?",Data protection,data,https://w3id.org/dpv#Data
+0,69,"Does she have full ownership over her creations, or does the owner of the sever on which the data are stored (partially) share ownership over it?",Data protection,share,https://w3id.org/dpv#Share
+0,70,23.4.6.2	Right to property,Data protection,right,https://w3id.org/dpv#Right
+0,73,23.4.7.1	Right to engage in peaceful protest,Data protection,right,https://w3id.org/dpv#Right
+0,75,23.4.7.2	Right to have a fair trial,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,75,23.4.7.2	Right to have a fair trial,Data protection,right,https://w3id.org/dpv#Right
+0,77,23.4.7.3	Right to life,Data protection,right,https://w3id.org/dpv#Right
+0,79,23.4.7.4	Right to practice one’s religion,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,79,23.4.7.4	Right to practice one’s religion,Data protection,right,https://w3id.org/dpv#Right
+0,81,23.4.7.5	Right to pursue happiness,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,81,23.4.7.5	Right to pursue happiness,Data protection,right,https://w3id.org/dpv#Right
+0,83,23.4.7.6	Right to receive an education,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,83,23.4.7.6	Right to receive an education,Data protection,right,https://w3id.org/dpv#Right
+0,84,Article 26 of the Universal Declaration of Human Rights states that every individual has the right to receive an education.,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,84,"However, this right is only meaningful if we supplement it with an idea of what constitutes an education, and some minimum requirements concerning quality.",Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,84,Article 26 of the Universal Declaration of Human Rights states that every individual has the right to receive an education.,Data protection,right,https://w3id.org/dpv#Right
+0,84,"However, this right is only meaningful if we supplement it with an idea of what constitutes an education, and some minimum requirements concerning quality.",Data protection,right,https://w3id.org/dpv#Right
+0,85,"As we use them on students, before there is conclusive evidence that these systems are in fact of satisfactory quality, this might have a negative impact on their education.",Data protection,use,https://w3id.org/dpv#Use
+0,85,"As we use them on students, before there is conclusive evidence that these systems are in fact of satisfactory quality, this might have a negative impact on their education.",Data protection,impact,https://w3id.org/dpv#Impact
+0,86,This could in turn harm,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,86,This could in turn harm,Data protection,harm,https://w3id.org/dpv#Harm
+0,87,23.4.7.7	Right to seek asylum,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,87,23.4.7.7	Right to seek asylum,Data protection,right,https://w3id.org/dpv#Right
+0,89,23.4.7.8	Right to vote,Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,89,23.4.7.8	Right to vote,Data protection,right,https://w3id.org/dpv#Right
+0,91,23.5	Justice,Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,91,23.5	Justice,Data protection,23.5,https://w3id.org/dpv#23.5
+0,93,We should make a distinction between two levels of harm to human capabilities.,Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,93,"First, it can be said that personalized learning systems inflict harm on people in their capacity as learners.",Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,93,"Hereby, the learning experience becomes more individualistic (McRae, 2013) and neglective of the social dimension of teaching (Bulger, 2016).",Risk,bulger,http://www.w3id.org/vair#Bulger
+0,93,We should make a distinction between two levels of harm to human capabilities.,Data protection,harm,https://w3id.org/dpv#Harm
+0,93,"First, it can be said that personalized learning systems inflict harm on people in their capacity as learners.",Data protection,harm,https://w3id.org/dpv#Harm
+0,93,"Whereas standard education is performed in a classroom with a teacher, personalized learning system is conducted behind a screen.",Data protection,screen,https://w3id.org/dpv#Screen
+0,93,"Hereby, the learning experience becomes more individualistic (McRae, 2013) and neglective of the social dimension of teaching (Bulger, 2016).",Data protection,bulger,https://w3id.org/dpv#Bulger
+0,94,"Second, as the purpose of education is to prepare young people for their later lives, personalized learning systems could potentially inflict harm on people in their later lives.",Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,94,"If one adopts the narrow conception of education as preparing children for their professional lives, this second level is concerned with the infliction of harm to the capabilities of people in the capacity as workers.",Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,94,"If on the other hand one adopts the broader conception of education as preparing children for all facts of adulthood, this second level is concerned with the infliction of harm to potentially all capabilities.",Ethics,harm,http://eaontology.linkeddata.es/def/Harm
+0,94,"Second, as the purpose of education is to prepare young people for their later lives, personalized learning systems could potentially inflict harm on people in their later lives.",Data protection,purpose,https://w3id.org/dpv#Purpose
+0,94,"Second, as the purpose of education is to prepare young people for their later lives, personalized learning systems could potentially inflict harm on people in their later lives.",Data protection,harm,https://w3id.org/dpv#Harm
+0,94,"If one adopts the narrow conception of education as preparing children for their professional lives, this second level is concerned with the infliction of harm to the capabilities of people in the capacity as workers.",Data protection,harm,https://w3id.org/dpv#Harm
+0,94,"If on the other hand one adopts the broader conception of education as preparing children for all facts of adulthood, this second level is concerned with the infliction of harm to potentially all capabilities.",Data protection,harm,https://w3id.org/dpv#Harm
+0,95,23.5.1.1	Life,Ethics,life,http://eaontology.linkeddata.es/def/Life
+0,113,23.5.1.10	Play,Ethics,play,http://eaontology.linkeddata.es/def/Play
+0,117,23.5.2	Global Justice,Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,118,"This is a moral improvement, as it answers to the fundamental needs of an underprivileged group.",Risk,group,http://www.w3id.org/vair#Group
+0,119,"In addition, personalized learning systems could be used to provide access to education for people in developing countries who have no, or limited access to schools (Zualkarnan, 2016).",Data protection,access,https://w3id.org/dpv#Access
+0,119,"In addition, personalized learning systems could be used to provide access to education for people in developing countries who have no, or limited access to schools (Zualkarnan, 2016).",Data protection,access,https://w3id.org/dpv#Access
+0,119,"While self-paced personalized learning may not be able to fully replace traditional or hybrid forms of education, it certainly has the potential to be an asset for those who would otherwise not have access to education.",Data protection,access,https://w3id.org/dpv#Access
+0,128,"On the positive side, there is some evidence that the gap in performance between students from privileged and underprivileged backgrounds is smaller when personalized learning systems are used.",AI Act,performance,http://tair.adaptcentre.ie/ontologies/tair/Performance
+0,128,This finding can be attributed to the personalization that enables each student to learn at her own pace.,Data protection,student,https://w3id.org/dpv#Student
+0,128,"Students who struggle may leave a course when it goes to fast but when the course is able to reduce the tempo to the student’s appropriate level, the student remains motivated.",Data protection,student,https://w3id.org/dpv#Student
+0,128,"Students who struggle may leave a course when it goes to fast but when the course is able to reduce the tempo to the student’s appropriate level, the student remains motivated.",Data protection,student,https://w3id.org/dpv#Student
+0,129,"However, there is mounting evidence that algorithms and data sets suffer from the same biases as humans (Alarcon et al., 2014).",Data protection,data,https://w3id.org/dpv#Data
+0,153,"If it is focused on learning all students the same material, and the personalization takes place mainly with respect to pace and form of delivery, there is little reason to suspect that personalized learning systems will be particularly conducive to cultural diversity.",Risk,suspect,http://www.w3id.org/vair#Suspect
+0,153,This is especially true if such an approach is combined with methods that stimulate students to learn from one another and have interest for each student’s particular set of knowledge.,Data protection,student,https://w3id.org/dpv#Student
+0,157,"John Dewey, who was an educational reformer as well as a psychologist, argues that “democracy is the faith that the process of experience is more important than any special result attained […].",Data protection,reformer,https://w3id.org/dpv#Reformer
+0,158,"This explains why social controversies (lgbtqi+ rights, historical facts such as the holocaust and colonialism, religion) are discussed within the context of schools (nrc, 2022).",Data protection,context,https://w3id.org/dpv#Context
+0,159,"As such, personalized learning systems are at risk of reducing shared experience and thus harming democracy in the long run",Data protection,risk,https://w3id.org/dpv#Risk
+0,163,"We have several times pointed at the importance of which conception of education one has, where  the narrower conception views the goal of education as the acquisition of (professional) skills, while the broader conception views the goal of education as becoming a responsible citizen.",Data protection,importance,https://w3id.org/dpv#Importance
+0,163,"We have several times pointed at the importance of which conception of education one has, where  the narrower conception views the goal of education as the acquisition of (professional) skills, while the broader conception views the goal of education as becoming a responsible citizen.",Data protection,citizen,https://w3id.org/dpv#Citizen
+0,186,"First, it is considered a human right to have an education, and every person in the world should be entitled to a proper education.",Ethics,right,http://eaontology.linkeddata.es/def/Right
+0,186,"Second, education is formative period in one’s life and is viewed as important not only for the individual but also for society and democracy as children learn to cooperate and trust one another.",Ethics,life,http://eaontology.linkeddata.es/def/Life
+0,186,"Think of the school conflict in the Netherlands in the 19th century, the discussions in the US on segregation, campus resistance, free choice of schools, and more recently the discussions in the developed world on whether curriculae should give more attention to the injustices of colonialism.",Risk,19th,http://www.w3id.org/vair#19Th
+0,186,"First, it is considered a human right to have an education, and every person in the world should be entitled to a proper education.",Data protection,right,https://w3id.org/dpv#Right
+0,186,All these important social issues are at least partially settled within the context of education.,Data protection,context,https://w3id.org/dpv#Context
+0,187,"We saw that as education is so constitutive of personhood, a change in education touches on many moral issues as diverse as autonomy, well-being, justice, democracy, privacy and cultural diversity.",Ethics,justice,http://eaontology.linkeddata.es/def/Justice
+0,187,"We saw that as education is so constitutive of personhood, a change in education touches on many moral issues as diverse as autonomy, well-being, justice, democracy, privacy and cultural diversity.",Ethics,privacy,http://eaontology.linkeddata.es/def/Privacy
